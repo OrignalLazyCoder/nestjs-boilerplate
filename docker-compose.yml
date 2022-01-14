@@ -3,17 +3,17 @@ version: '3.1'
 
 services:
 
-  # db_postgres:
-  #   image: postgres
-  #   restart: always
-  #   volumes:
-  #     - /Users/example/path:/var/lib/postgresql/data
-  #   environment:
-  #     POSTGRES_USER: postgres
-  #     POSTGRES_PASSWORD: password
-  #     POSTGRES_DB: boilerplate
-  #   ports: 
-  #     - "5432:5432"
+  db_postgres:
+    image: postgres
+    restart: always
+    volumes:
+      - /Users/example/path:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: boilerplate
+    ports: 
+      - "5432:5432"
 
   redis:
     image: redis
