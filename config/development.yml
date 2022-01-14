@@ -1,0 +1,15 @@
+db:
+    host: 'localhost'
+    username: 'postgres'
+    password: 'root'
+    synchronize: true
+    migrationsRun: false
+  
+jwt:
+    secret: 'secret-key'
+
+redis:
+    host: 'localhost'
+    port: 6379
+    ttl: 20
+    max: 100
