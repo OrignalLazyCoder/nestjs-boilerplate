@@ -29,7 +29,6 @@ export class UserService {
 
     try {
       const users = await queryBuilder
-                          .leftJoinAndSelect("user.tasks", "tasks")
                           .skip(limit * (page-1))
                           .take(limit)
                           .getMany();
@@ -76,9 +75,11 @@ export class UserService {
     }
 
     try {
-      this.userRepository.merge(found, updateUserDto);
-      const result = await this.userRepository.save(found);
-      // const result = await this.userRepository.update({id: id}, updateUserDto);
+      //this.userRepository.merge(found, updateUserDto);
+      // const result = await this.userRepository.save(found);
+      const result = await this.userRepository.update( {
+        id: id.toString()
+      }, updateUserDto);
       return plainToClass(UserDto, result);
     } catch (error) {
       this.logger.error(error.message, error.stack);
